@@ -1,5 +1,5 @@
 from address import Address
-from mailing import Mailing
+from lesson3.mailing import Mailing
 
 sender = Address(
     index="123456",

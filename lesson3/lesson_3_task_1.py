@@ -1,4 +1,4 @@
-from user import User
+from lesson3.user import User
 
 my_user = User(first_name="Иван", last_name="Иванов")
 my_user.display_first_name()

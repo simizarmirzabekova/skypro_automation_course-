@@ -1,35 +1,33 @@
-import time
+   
 from calculator_page import CalculatorPage
 from shop_pages import LoginPage, MainShopPage, CartPage, CheckoutPage
 
-# ТЕСТ 1. Калькулятор (используем chrome_driver)
+
 def test_calculator(chrome_driver):
-    # 1. Создаем объект страницы
+
     calc_page = CalculatorPage(chrome_driver)
     
-    # 2. Открываем страницу и вводим задержку
+
+
+    
     calc_page.open()
     calc_page.set_delay("45")
+
     
-    # 3. Нажимаем кнопки (7 + 8 =)
     calc_page.press_button("7")
     calc_page.press_button("+")
     calc_page.press_button("8")
     calc_page.press_button("=")
     
-    # 4. Ждем результат (ставим небольшую паузу, так как реально ждать 45 секунд долго, 
-    # но для автотеста нужно убедиться, что он дождется. 
-    # Используем таймер, чтобы тест не висел 45 секунд, если что-то пойдет не так).
-    # В реальном проекте лучше использовать WebDriverWait, но здесь сделаем просто:
-    time.sleep(46) 
+    # time.sleep(46) - Убрали! Теперь ожидание "15" происходит внутри get_result()
     
-    # 5. Проверяем результат
-    assert calc_page.get_result() == "15"
+    result = calc_page.get_result()
+    assert result == "15"
 
 
-# ТЕСТ 2. Интернет-магазин (используем firefox_driver)
+
 def test_shop(firefox_driver):
-    # 1. Логинимся
+    # 1. Логинимся (метод login() теперь сам нажимает кнопку входа)
     login_page = LoginPage(firefox_driver)
     login_page.open()
     login_page.login("standard_user", "secret_sauce")
@@ -52,4 +50,3 @@ def test_shop(firefox_driver):
     # 5. Проверяем итоговую стоимость
     total = checkout_page.get_total_price()
     assert total == "Total: $58.29"
-    

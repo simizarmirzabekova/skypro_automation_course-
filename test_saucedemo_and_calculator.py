@@ -1,3 +1,4 @@
+ lesson9
 import time
 
 import pytest
@@ -113,4 +114,4 @@ def test_shop_flow_with_page_objects(firefox_driver):
     actual_total = checkout_page.get_total_price()
     assert actual_total == expected_total, \
         f"Сумма неверная. Ожидается ${expected_total}, а получен ${actual_total}"
-    
+     main

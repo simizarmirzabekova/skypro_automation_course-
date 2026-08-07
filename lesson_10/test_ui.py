@@ -1,6 +1,7 @@
 import allure
 from calculator_page import CalculatorPage
-from shop_pages import LoginPage, MainPage, CartPage, CheckoutPage
+from shop_pages import LoginPage, MainShopPage
+
 
 @allure.title("Тест работы калькулятора")
 @allure.description("Проверяем, что калькулятор правильно выполняет сложение с задержкой")
@@ -34,7 +35,7 @@ def test_shop(firefox_driver):
         login_page.login("standard_user", "secret_sauce")
 
     with allure.step("Добавляем товары в корзину"):
-        shop_page = MainPage(firefox_driver)
+        shop_page = MainShopPage(firefox_driver)
         shop_page.add_to_cart("Sauce Labs Backpack")
         shop_page.add_to_cart("Sauce Labs Bolt T-Shirt")
         shop_page.add_to_cart("Sauce Labs Onesie")
@@ -42,4 +43,4 @@ def test_shop(firefox_driver):
     with allure.step("Переходим в корзину и оформляем заказ"):
         cart_page = shop_page.go_to_cart()
         # Добавьте сюда остальные шаги оформления, если они у вас есть в коде
-        
+             

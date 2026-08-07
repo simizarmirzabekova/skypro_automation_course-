@@ -18,10 +18,10 @@ class CalculatorPage:
         Открывает страницу калькулятора.
         :return: None
         """
-    self.driver.get(self.url)
-
+        self.driver.get(self.url)
     def set_delay(self, value: str):
-    """
+ 
+     """
     Устанавливает задержку перед выполнением операций.
     :param value: str - значение задержки (например, "45")
     :return: None

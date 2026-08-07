@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 # Фикстура для Chrome (для теста калькулятора)
+
 @pytest.fixture
 def chrome_driver():
     options = ChromeOptions()
@@ -16,6 +17,8 @@ def chrome_driver():
     driver.quit()
 
 # Фикстура для Firefox (для теста магазина)
+
+
 @pytest.fixture
 def firefox_driver():
     options = FirefoxOptions()

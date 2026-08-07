@@ -26,22 +26,21 @@ class MainShopPage:
     def add_to_cart(self, item_name: str):
         """
         Добавляет товар в корзину по его названию.
-        :param product_name: str - название товара (например, "Sauce Labs Backpack")
+        :param item_name: str - название товара (например, "Sauce Labs Backpack")
         :return: None
         """
         # ваш код добавления товара
       
-
     def go_to_cart(self):
         """
-        Переходит на страницу корзины.
+        Переходит на страницу корзины
         :return: CartPage - объект страницы корзины (для дальнейших действий)
         """
         # ваш код перехода в корзину и возврата страницы
 
 class CartPage:
     def __init__(self, driver):
-        self.driver = driver
+        self.driver = drive
 
     def checkout(self):
         self.driver.find_element(By.ID, "checkout").click()
@@ -61,4 +60,3 @@ class CheckoutPage:
 
         total_element = self.driver.find_element(By.CLASS_NAME, "summary_total_label")
         return total_element.text
-    

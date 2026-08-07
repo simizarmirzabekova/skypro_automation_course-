@@ -10,10 +10,13 @@ class LoginPage:
         self.driver.get(self.url)
 
     def login(self, username: str, password: str):
-        self.driver.find_element(By.ID, "user-name").send_keys(username)
-        self.driver.find_element(By.ID, "password").send_keys(password)
-        # Нажимаем кнопку входа прямо здесь (убран лишний метод submit_login)
-        self.driver.find_element(By.ID, "login-button").click()
+        """
+        Выполняет вход в систему с указанными учетными данными.
+        :param username: str - имя пользователя (например, "standard_user")
+        :param password: str - пароль пользователя (например, "secret_sauce")
+        :return: None
+        """
+        # ваш код логина
 
 
 class MainShopPage:
@@ -21,13 +24,20 @@ class MainShopPage:
         self.driver = driver
 
     def add_to_cart(self, item_name: str):
-        
-        item_id = f"add-to-cart-{item_name.lower().replace(' ', '-')}"
-        self.driver.find_element(By.ID, item_id).click()
+        """
+        Добавляет товар в корзину по его названию.
+        :param product_name: str - название товара (например, "Sauce Labs Backpack")
+        :return: None
+        """
+        # ваш код добавления товара
+      
 
     def go_to_cart(self):
-        self.driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()
-
+        """
+        Переходит на страницу корзины.
+        :return: CartPage - объект страницы корзины (для дальнейших действий)
+        """
+        # ваш код перехода в корзину и возврата страницы
 
 class CartPage:
     def __init__(self, driver):

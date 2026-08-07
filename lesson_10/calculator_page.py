@@ -14,12 +14,19 @@ class CalculatorPage:
         self.result_locator = (By.CSS_SELECTOR, ".screen")
 
     def open(self):
-        self.driver.get(self.url)
+        """
+        Открывает страницу калькулятора.
+        :return: None
+        """
+    self.driver.get(self.url)
 
     def set_delay(self, value: str):
-        delay_input = self.driver.find_element(*self.delay_locator)
-        delay_input.clear()
-        delay_input.send_keys(value)
+    """
+    Устанавливает задержку перед выполнением операций.
+    :param value: str - значение задержки (например, "45")
+    :return: None
+    """
+    # ваш старый код метода
 
     def press_button(self, text: str):
         # Ищем кнопку по тексту на ней
